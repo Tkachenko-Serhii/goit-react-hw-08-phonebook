@@ -1,4 +1,4 @@
-import { useDeleteContactMutation } from "redux/contactSlice";
+import { useDeleteContactMutation } from "redux/contacts/contactSlice";
 import { alert } from "@pnotify/core";
 
 import s from "./ContactItem.module.css";

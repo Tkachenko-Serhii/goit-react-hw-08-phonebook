@@ -1,6 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { useFetchContactsQuery } from "redux/contactSlice";
+import { useFetchContactsQuery } from "redux/contacts/contactSlice";
 import { useSelector } from "react-redux";
 import ContactItem from "./ContactItem";
 import Loader from "components/Loader";
@@ -30,7 +29,3 @@ export default function ContactList() {
     </>
   );
 }
-
-ContactList.propTypes = {
-  contacts: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
-};

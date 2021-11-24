@@ -1,7 +1,7 @@
 import {
   useFetchContactsQuery,
   useCreateContactMutation,
-} from "redux/contactSlice";
+} from "redux/contacts/contactSlice";
 import { alert } from "@pnotify/core";
 import s from "./Form.module.css";
 
@@ -30,32 +30,34 @@ export default function Form() {
   };
 
   return (
-    <form id='form' onSubmit={onSubmit} className={s.form} autoComplete='off'>
-      <label className={s.label}>
-        <span className={s.text}>Name</span>
-        <input
-          type='text'
-          name='name'
-          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
-          required
-          className={s.input}
-        />
-      </label>
-      <label className={s.label}>
-        <span className={s.text}>Number</span>
-        <input
-          type='tel'
-          name='number'
-          pattern='\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}'
-          title='Номер телефона должен состоять цифр и может содержать пробелы, тире, круглые скобки и может начинаться с +'
-          className={s.input}
-          required
-        />
-      </label>
-      <button type='submit' className={s.button} disabled={isLoading}>
-        Add contact
-      </button>
-    </form>
+    <div className={s.addForm}>
+      <form id='form' onSubmit={onSubmit} className={s.form} autoComplete='off'>
+        <label className={s.label}>
+          <span className={s.text}>Name</span>
+          <input
+            type='text'
+            name='name'
+            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
+            required
+            className={s.input}
+          />
+        </label>
+        <label className={s.label}>
+          <span className={s.text}>Number</span>
+          <input
+            type='tel'
+            name='number'
+            pattern='\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}'
+            title='Номер телефона должен состоять цифр и может содержать пробелы, тире, круглые скобки и может начинаться с +'
+            className={s.input}
+            required
+          />
+        </label>
+        <button type='submit' className={s.button} disabled={isLoading}>
+          Add contact
+        </button>
+      </form>
+    </div>
   );
 }
