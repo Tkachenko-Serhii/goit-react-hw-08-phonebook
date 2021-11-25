@@ -1,0 +1,13 @@
+.container {
+  text-align: center;
+  padding: 40px 40px;
+}
+
+.title {
+  color: #047921;
+}
+
+.image {
+  width: 300px;
+  background-color: transparent;
+}

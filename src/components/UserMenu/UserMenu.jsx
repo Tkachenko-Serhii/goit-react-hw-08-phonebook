@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { authSelectors, authOperations } from "redux/auth";
 import s from "./UserMenu.module.css";
-import avatar from "./default-avatar.png";
+import avatar from "../images/default-avatar.png";
 
 export default function UserMenu() {
   const dispatch = useDispatch();
@@ -9,7 +9,7 @@ export default function UserMenu() {
 
   return (
     <div className={s.container}>
-      <img src={avatar} alt='' width='32' className={s.avatar} />
+      <img src={avatar} alt='avatar' width='32' className={s.avatar} />
       <span className={s.name}>Welcome, {name}</span>
       <button
         type='button'
