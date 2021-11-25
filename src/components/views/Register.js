@@ -32,16 +32,16 @@ export default function RegisterView() {
 
   return (
     <div>
-      <h1>Registration page</h1>
+      <h1 className={s.title}>Registration page</h1>
 
       <form onSubmit={handleSubmit} className={s.form} autoComplete='off'>
         <label className={s.label}>
-          Name
+          <span className={s.text}>Name</span>
           <input type='text' name='name' value={name} onChange={handleChange} />
         </label>
 
         <label className={s.label}>
-          E-Mail
+          <span className={s.text}>E-Mail</span>
           <input
             type='email'
             name='email'
@@ -51,7 +51,7 @@ export default function RegisterView() {
         </label>
 
         <label className={s.label}>
-          Password
+          <span className={s.text}>Password</span>
           <input
             type='password'
             name='password'
@@ -60,7 +60,9 @@ export default function RegisterView() {
           />
         </label>
 
-        <button type='submit'>Registration</button>
+        <button type='submit' className={s.button}>
+          Registration
+        </button>
       </form>
     </div>
   );

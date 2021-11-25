@@ -28,10 +28,10 @@ export default function Login() {
 
   return (
     <>
-      <h1>Authorization page</h1>
+      <h1 className={s.title}>Authorization page</h1>
       <form onSubmit={handleSubmit} className={s.form} autoComplete='off'>
         <label className={s.label}>
-          E-mail
+          <span className={s.text}>E-Mail</span>
           <input
             type='email'
             name='email'
@@ -40,7 +40,7 @@ export default function Login() {
           />
         </label>
         <label className={s.label}>
-          Password
+          <span className={s.text}>Password</span>
           <input
             type='password'
             name='password'
@@ -48,7 +48,9 @@ export default function Login() {
             onChange={handleChange}
           />
         </label>
-        <button type='submit'>Login</button>
+        <button type='submit' className={s.button}>
+          Login
+        </button>
       </form>
     </>
   );
