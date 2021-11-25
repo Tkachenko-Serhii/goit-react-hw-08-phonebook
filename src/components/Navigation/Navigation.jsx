@@ -9,12 +9,12 @@ const Navigation = () => {
 
   return (
     <nav className={s.nav}>
-      <NavLink to='/' className={s.link}>
+      <NavLink to='/' className='link'>
         Home
       </NavLink>
       {isLoggedIn && (
         <>
-          <NavLink to='/contacts' className={s.link}>
+          <NavLink to='/contacts' className='link'>
             Contacts
           </NavLink>
         </>

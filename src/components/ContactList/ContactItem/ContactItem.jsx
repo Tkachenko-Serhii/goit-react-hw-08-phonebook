@@ -14,9 +14,17 @@ export default function ContactItem({ id, name, number }) {
 
   return (
     <li className={s.item}>
-      <p className={s.contact}>
-        {name}: {number}
-      </p>
+      <div className={s.description}>
+        <p className={s.contact}>
+          <span className={s.contactText}>Name: </span>
+          {name}
+        </p>
+        <p className={s.contact}>
+          {" "}
+          <span className={s.contactText}>Number: </span>
+          {number}
+        </p>
+      </div>
       <button
         className={s.button}
         onClick={(e) => deleteContact(id)}

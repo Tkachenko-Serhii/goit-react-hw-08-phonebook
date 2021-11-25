@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import contactsActions from "redux/contacts/contactsActions";
@@ -10,8 +11,8 @@ export default function Filter() {
     dispatch(contactsActions.changeFilter(e.target.value));
 
   return (
-    <>
-      <p className={s.text}>Find contacts by name</p>
+    <div className={s.container}>
+      <p className={s.text}>Find contacts by name:</p>
       <input
         type='text'
         name='Find contact'
@@ -20,6 +21,11 @@ export default function Filter() {
         className={s.input}
         autoComplete='off'
       />
-    </>
+    </div>
   );
 }
+
+Filter.propTypes = {
+  filter: PropTypes.string,
+  onFilterChange: PropTypes.func,
+};
