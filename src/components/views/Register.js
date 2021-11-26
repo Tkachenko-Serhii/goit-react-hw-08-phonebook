@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { authOperations } from "redux/auth";
+import { alert } from "@pnotify/core";
 import s from "./Register.module.css";
 
 export default function RegisterView() {
@@ -24,6 +25,13 @@ export default function RegisterView() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (email === "" || password === "" || name === "") {
+      alert({
+        type: "warning",
+        text: "Fill in the registration data",
+      });
+      return;
+    }
     dispatch(authOperations.register({ name, email, password }));
     setName("");
     setEmail("");

@@ -21,6 +21,13 @@ export default function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (email === "" || password === "") {
+      alert({
+        type: "warning",
+        text: "Please enter your email and password",
+      });
+      return;
+    }
     dispatch(authOperations.logIn({ email, password }));
     setEmail("");
     setPassword("");
