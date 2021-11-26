@@ -9,6 +9,7 @@ import { authOperations, authSelectors } from "redux/auth";
 import PrivateRoute from "PrivateRoute";
 import PublicRoute from "PublicRoute";
 import Contacts from "./components/views/Contacts";
+import Error from "components/Error";
 
 const Register = lazy(() =>
   import("./components/views/Register" /* webpackChunkName: "register-page" */)
@@ -56,6 +57,7 @@ export default function App() {
                   <PrivateRoute component={Contacts} redirectTo='/login' />
                 }
               />
+              <Route path='*' element={<PublicRoute component={Error} />} />
             </Routes>
           </Suspense>
         </>
