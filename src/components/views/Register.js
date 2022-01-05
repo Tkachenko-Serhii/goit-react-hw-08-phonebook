@@ -45,7 +45,13 @@ export default function RegisterView() {
       <form onSubmit={handleSubmit} className={s.form} autoComplete='off'>
         <label className={s.label}>
           <span className={s.text}>Name</span>
-          <input type='text' name='name' value={name} onChange={handleChange} />
+          <input
+            type='text'
+            name='name'
+            value={name}
+            onChange={handleChange}
+            autoComplete='off'
+          />
         </label>
 
         <label className={s.label}>
@@ -55,6 +61,7 @@ export default function RegisterView() {
             name='email'
             value={email}
             onChange={handleChange}
+            autoComplete='off'
           />
         </label>
 

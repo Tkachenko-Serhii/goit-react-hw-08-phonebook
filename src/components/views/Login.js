@@ -44,6 +44,7 @@ export default function Login() {
             name='email'
             value={email}
             onChange={handleChange}
+            autoComplete='off'
           />
         </label>
         <label className={s.label}>
