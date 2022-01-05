@@ -38,7 +38,7 @@ export default function App() {
             <Routes>
               <Route path='/' element={<PublicRoute component={Home} />} />
               <Route
-                path='/register'
+                path='/signup'
                 element={<PublicRoute component={Register} restricted />}
               />
               <Route
